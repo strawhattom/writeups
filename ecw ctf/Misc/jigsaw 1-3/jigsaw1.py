@@ -9,14 +9,11 @@ PORT = 27138
 
 r = remote("213.32.7.237",PORT)
 
-operations = ['-','+','*','/']
+answers = ["yes","10/28"]                       # constant answers (first two questions)
+question_type = ["maths","formated","encoding"] # used when getting random questions
 
-answers = ["yes","10/28"]
-encoder = ["ASCII","base64","base32","ASCII85"]
-question_type = ["maths","formated","encoding"]
-
-alph = 'abcdefghijklmnopqrstuvwxyz'
-array_alph = [x for x in alph]
+alph = 'abcdefghijklmnopqrstuvwxyz'             # used to brute force caesar salad algorithm
+array_alph = [x for x in alph]                  # 
 
 save = -1
 
@@ -64,25 +61,7 @@ def detect_encoding(msg):
     return encoding_type
 
 def do_operation(msg):
-    operand_index = ''
-    for char in msg:
-        if char in operations:
-            operand_index = operations.index(char)
-            break
-    sp = msg.split(operations[operand_index])
-    x = int(sp[0])
-    y = int(sp[1])
-    res = 0
-    match operations[operand_index]:
-        case '+':
-            res = x + y
-        case '-':
-            res = x - y
-        case '/':
-            res = x / y
-        case '*':
-            res = x * y
-    return res
+    return eval(msg)
 
 
 i = 1

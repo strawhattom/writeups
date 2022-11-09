@@ -1,0 +1,2 @@
+INSERT INTO USERS (id,iban,username,password,firstname,lastname,birthday,is_sponsor) VALUES (8,'FR76000R4NG3L43112202200038','hhodor','HODOR!? Hodor? HODOR? hodor. hodor? rHoOodoOorHODOR Hodor Hodor... oHodor. Hodor? HODOR? hodor!','Hodor', 'Hodor',TO_DATE('29/01/1987', 'DD/MM/YYYY'),false);
+INSERT INTO USERS (id,iban,username,password,firstname,lastname,birthday,is_sponsor) VALUES (9,'FR76000R4NG3L42512202200063','snoel','X2VIWSN0PxpBqCqdqQfQuQ==','Santa', 'Noel',TO_DATE('25/12/1867', 'DD/MM/YYYY'),false);
